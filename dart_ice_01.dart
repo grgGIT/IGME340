@@ -17,25 +17,23 @@ void main() {
   iAmVar = "I am String now";
   print(iAmVar);
   //Use interpolation and output myString along with myFloat.
-  print(myString + " " + myFloat.toString());
+  print("$myString $myFloat");
 
   //Use interpolation and output myString, but make all the characters uppercase.
-  print(myString.toUpperCase());
+  print("${myString.toUpperCase()}");
 
   //Use interpolation and output both the value of myFloat rounded up and down.
-  print(myFloat.ceilToDouble().toString() +
-      " & " +
-      myFloat.floorToDouble().toString());
+  print("${myFloat.ceilToDouble()} ${myFloat.floorToDouble()}");
 
   //Use interpolation to print out the number of seconds that have passed since 1970 - use the DateTime library.
   final old = DateTime.utc(1970, DateTime.january);
   final today = DateTime.now();
-  final difference = today.difference(old);
-print(difference.inSeconds.toString() + " seconds");
+  final diff = today.difference(old);
+print(" ${diff.inSeconds} seconds");
   
   //Print out the absolute value of -999.
   double negativ = -999;
-  print(negativ.abs().toString());
+  print("${negativ.abs()}");
   
   //Create a new dynamic variable. Assign it initially to 1234, print it, then assign to "Hello there!", and print it.
   var dynam = "1234";
@@ -71,3 +69,5 @@ print(difference.inSeconds.toString() + " seconds");
       b2++;
   }
 }
+
+
