@@ -8,9 +8,8 @@ void main() {
   printThree(second: "Hello");
 
   addThree(3, 2, 3);
-  
+
   print(joiner());
-  
 }
 
 void helloFunction(String? a, int b) {
@@ -32,20 +31,49 @@ void addThree(int firstNum, int secondNum, int thirdNum) {
 }
 
 //#2
-String joiner({String? first, String? second, String third = "default", String fourth = "default"}){
-  
+String joiner(
+    {String? first,
+    String? second,
+    String third = "default",
+    String fourth = "default"}) {
   List<String> parts = [];
-  if(first != null) parts.add(first);
-  if(second != null) parts.add(second);
+  if (first != null) parts.add(first);
+  if (second != null) parts.add(second);
   parts.add(third);
   parts.add(fourth);
-  
-  
+
   return parts.join(', ');
-  
 }
 
-//#3 
+//#3 & 4
 
+// Function to add 3 floating point numbers, return a map with sum, high, and low
+Map<String, dynamic> hiLow(double num1, double num2, double num3) {
+  double sum = num1 + num2 + num3;
+  int high = sum.ceil(); // Round upward
+  int low = sum.floor(); // Round downward
 
+  return {
+    "sum": sum,
+    "high": high,
+    "low": low,
+  };
+}
+
+// Function to create a character map with named parameters and default values
+Map<String, dynamic> makeCharacter({
+  required String name,
+  required String playerClass,
+  int? mp,
+  int? hp,
+}) {
+  return {
+    "name": name,
+    "playerClass": playerClass,
+    "mp": mp ?? 50, // Default mp value is 50 if null
+    "hp": hp ?? 50, // Default hp value is 50 if null
+    "xp": 0, // Default xp
+    "level": 1 // Default level
+  };
+}
 
